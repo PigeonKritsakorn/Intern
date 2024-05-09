@@ -177,24 +177,6 @@ function Login() {
         />
 
         <div className="flex flex-col  xs:w-[100%]  md:w-[50%] lg:w-[60%] xl:w-auto justify-center">
-          {/* <div className="lg:flex lg:flex-col lg:justify-center lg:items-center xl:flex xl:flex-col xl:justify-center xl:items-center xs:justify-start xs:items-center">
-            <TextField
-              id="outlined-basic-email"
-              label="Email"
-              variant="outlined"
-              className="xs:w-[350px] h-[71px] mb-4 lg:w-[600px] xl:w-[500px]"
-              onChange={(e) => handleInputChange("email", e.target.value)}
-            />
-            <TextField
-              id="outlined-basic-password"
-              label="Password"
-              type="password"
-              variant="outlined"
-              className="xs:w-[350px] h-[71px] mb-4 lg:w-[600px] xl:w-[500px]"
-              onChange={(e) => handleInputChange("password", e.target.value)}
-            />
-            {error && <Typography color={COLORS.DANGER}>{error}</Typography>}
-          </div> */}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
