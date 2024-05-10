@@ -163,20 +163,20 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col xs:h-screen sm:h-screen md:h-screen lg:h-screen xl:h-screen">
+    <div className="flex flex-col xs:h-screen sm:h-screen md:h-screen lg:h-screen xl:w-screen xl:h-screen">
       <img
         src={LoginBG}
         alt="Login Background"
         className="xs:h-[20%] lg:h-[20%] xl:h-[20%]"
       />
-      <div className="xs:flex xs:flex-col xs:justify-center xs:items-center sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center xs:h-[80%] lg:h-[80%] xl:h-[80%] xl:flex xl:flex-col xl:justify-center xl:items-center xs:w-full ">
+      <div className="xs:flex xs:flex-col xs:justify-center xs:items-center sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center xs:h-[80%] lg:h-[80%] xl:h-auto xl:flex xl:flex-col xl:justify-center xl:items-center xs:w-full ">
         <img
           src={RunxBlue}
           alt="Thairun Logo"
           className="flex xs:w-[100%] xs:px-5 md:w-[55%] lg:w-[35%] xl:w-[30%] xl:justify-center xl:items-center"
         />
 
-        <div className="flex flex-col  xs:w-[100%]  md:w-[50%] lg:w-[60%] xl:w-auto justify-center">
+        <div className="flex flex-col  xs:w-[100%]  md:w-[50%] lg:w-[60%] xl:h-auto xl:w-auto justify-center space-y-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
@@ -184,11 +184,13 @@ function Login() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="shadcn" {...field} />
-                    </FormControl>
-                    <FormMessage />
+                    <div className="flex flex-col justify-start items-start space-y-2">
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Insert Email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
@@ -197,18 +199,38 @@ function Login() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input placeholder="shadcn" {...field} />
-                    </FormControl>
-                    <FormMessage />
+                    <div className="flex flex-col justify-start items-start space-y-2">
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Insert Password" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <Button
+                className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%] text-xl"
+                style={{ backgroundColor: COLORS.BUTTON }}
+                type="submit"
+              >
+                Login
+              </Button>
             </form>
           </Form>
-          <div className="xs:justify-end xs:flex xl:w-[100%] ">
+          <div className="xs:justify-end xs:flex xl:flex xl:flex-col xl:w-[100%] xl:items-end">
+            <Button
+              onClick={goToAdminPage}
+              className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%]"
+              style={{
+                fontSize: "20px",
+                fontWeight: 400,
+                color: COLORS.WHITE,
+                backgroundColor: COLORS.BLACK,
+              }}
+            >
+              Login as Admin
+            </Button>
             <Link to="/ForgetPassword">
               <Button
                 style={{
@@ -222,32 +244,6 @@ function Login() {
             </Link>
           </div>
           <div className="flex flex-col justify-center items-center space-y-4">
-            <div className="flex flex-col justify-center items-center w-[100%]">
-              <Button
-                onClick={handleuserLogin}
-                className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%]"
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 400,
-                  color: COLORS.WHITE,
-                  backgroundColor: COLORS.BUTTON,
-                }}
-              >
-                Login
-              </Button>
-              <Button
-                onClick={goToAdminPage}
-                className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%]"
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 400,
-                  color: COLORS.WHITE,
-                  backgroundColor: COLORS.BUTTON,
-                }}
-              >
-                Login as Admin
-              </Button>
-            </div>
             <div
               style={{
                 position: "relative",
