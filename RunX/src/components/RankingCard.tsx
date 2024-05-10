@@ -183,7 +183,7 @@ export function RankingCard() {
   }, []);
 
   return (
-    <div className="flex flex-col w-[100%]  items-center justify-between space-y-4">
+    <div className="flex flex-col w-[100%] h-auto items-center space-y-4">
       <div className="xs:w-[90%] md:w-[90%] lg:w-[80%] xl:w-[80%] flex flex-row bg-[#F5F5F5] rounded-lg h-auto">
         <div className="flex flex-wrap content-center pl-2">
           <Search className="opacity-[0.6]" />

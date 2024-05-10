@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
+import continents from "../JSON/countryByContinent.json";
 import { calculateScore } from "../src/calculate";
 const db = new PrismaClient();
 
