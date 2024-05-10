@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RankingCard } from "@/components/RankingCard.tsx";
-// import RankingGraph from "@/components/RankingGraph.tsx";
+import RankingGraph from "@/components/RankingGraph.tsx";
 import Chart from "react-apexcharts";
 import {
   LineChart,
@@ -290,8 +290,8 @@ function Ranking() {
       </div>
       <div className="relative flex flex-col xl:w-[100%] h-[60%]">
         <img src={RankingBG} className="w-screen h-screen" />
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
-          {/* <RankingGraph /> */}
+        <div className="absolute w-full h-[100%] flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
+          <RankingGraph />
           <RankingCard />
         </div>
       </div>
