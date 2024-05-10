@@ -10,8 +10,8 @@ import { swagger } from "@elysiajs/swagger";
 // import { appUser } from "./server/serverUser";
 // import { appAdmin } from "./server/serverAdmin";
 // import { resetpassword } from "./api/user/users";
-// import { appUsers } from "./api/user/users";
-// import { appRunnerPlugin } from "./api/runner/runners";
+import { appUsers } from "./users";
+import { appRunnerPlugin } from "./runners";
 // import { appSingupPlugin } from "./api/user/singup";
 import { appLoginPlugin } from "./login";
 
@@ -37,8 +37,8 @@ const app = new Elysia()
   // .use(resetpassword)
   // .use(appSingupPlugin)
 
-  // .use(appUsers)
-  // .use(appRunnerPlugin)
+  .use(appUsers)
+  .use(appRunnerPlugin)
   // .use(getraces)
   // .use(appgetEventPlugin)
   // .use(appgetfillterEventPlugin)

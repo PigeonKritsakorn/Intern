@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RankingCard } from "@/components/RankingCard.tsx";
 import RankingGraph from "@/components/RankingGraph.tsx";
-import Chart from "react-apexcharts";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+
 
 import bgHeader from "../assets/bg_home.png";
 import RankingBG from "../assets/RankingBG.png";
@@ -30,8 +20,8 @@ import _ from "lodash";
 import "../App.css";
 import FilterSVG from "../assets/filter.svg";
 
-import { edenTreaty } from "@elysiajs/eden";
-import type { App } from "../../../src/server.ts";
+// import { edenTreaty } from "@elysiajs/eden";
+// import type { App } from "../../../src/server.ts";
 
 import CardEventList, {
   TypeEventListData,
@@ -43,7 +33,7 @@ import TableRunnerRanking, {
 import TableRunnerRankingTop3 from "@/components/TableRunnerRankingTop3.tsx";
 
 function Ranking() {
-  const client = edenTreaty<App>(import.meta.env.VITE_API_URL) as any;
+  // const client = edenTreaty<App>(import.meta.env.VITE_API_URL) as any;
 
   const runnerMockupTop3: TypeRunnersListData[] = [
     {
@@ -238,18 +228,18 @@ function Ranking() {
     },
   ];
 
-  const filterRacesQuery = async (obj: object) => {
-    setLoading(false);
-    setTimeout(async () => {
-      const { data: value, error: errorInfo } = await client.api.events.get({
-        $query: obj,
-      });
-      if (value && !errorInfo) {
-        setEvents(value.data);
-        setLoading(true);
-      }
-    }, 1000);
-  };
+  // const filterRacesQuery = async (obj: object) => {
+  //   setLoading(false);
+  //   setTimeout(async () => {
+  //     const { data: value, error: errorInfo } = await client.api.events.get({
+  //       $query: obj,
+  //     });
+  //     if (value && !errorInfo) {
+  //       setEvents(value.data);
+  //       setLoading(true);
+  //     }
+  //   }, 1000);
+  // };
 
   const [isLoading, setLoading] = React.useState<Boolean>(false);
   const [events, setEvents] = React.useState<TypeEventListData[]>([]);
@@ -265,12 +255,12 @@ function Ranking() {
     }, 2000);
   };
 
-  useEffect(() => {
-    filterRacesQuery({});
-  }, []);
+  // useEffect(() => {
+  //   filterRacesQuery({});
+  // }, []);
 
   return (
-    <div className="flex flex-col h-[100%]">
+    <div className="flex flex-col w-[100%] h-[100%]">
       <div className="relative flex flex-col flex-wrap items-center lg:min-h-fit xs:bg-[#000] lg:bg-none sm:h-[20%] xl:h-[40%]">
         <div
           className="w-full xs:overlayimg-black lg:overlayimg-black sm:h-auto xs:h-auto md:h-auto"
@@ -288,8 +278,9 @@ function Ranking() {
           </span>
         </div>
       </div>
-      <div className="flex flex-col xl:w-[100%] h-[60%]">
-        <div className="bgRanking w-screen h-auto flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
+      <div className="relative flex flex-col xl:w-[100%] h-[100%]">
+        <img src={RankingBG} className="w-screen h-auto" />
+        <div className="absolute w-full h-full flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
           <RankingGraph />
           <RankingCard />
         </div>
