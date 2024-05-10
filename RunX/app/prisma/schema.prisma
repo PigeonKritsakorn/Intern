@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UserRunX {
+  id             Int       @id @unique @default(autoincrement())
+  firstname_eng  String
+  lastname_eng   String
+  firstname_thai String?
+  lastname_thai  String?
+  birth_date     DateTime?
+  gender         String?
+  email          String    @unique
+  password       String
+  id_passport    String?
+  nationality    String?
+  policy         Boolean
+  user_img       String?
+  //Race_result    Race_result[]
+}
+
+model Organization {
+  id   Int     @id @default(autoincrement())
+  name String  @unique
+  race Races[]
+}
+
+model Events {
+  id        Int     @id @default(autoincrement())
+  org_id    Int?
+  name      String  @unique
+  cover_img String?
+  logo_img  String?
+  country   String
+  distance  Int?
+  Races     Races[]
+  //Category  Category[]
+}
+
+model Races {
+  id          Int           @id @default(autoincrement())
+  org         Organization  @relation(fields: [org_id], references: [id])
+  org_id      Int
+  event       Events        @relation(fields: [event_id], references: [id])
+  event_id    Int
+  name        String        @unique
+  state       String?
+  date        DateTime?
+  cover_img   String?
+  logo_img    String?
+  start_time  String
+  distance    Int
+  time_stamp  DateTime      @default(now())
+  Race_result Race_result[]
+  //Category    Category[]
+}
+
+// model Category {
+//   id          Int           @id @default(autoincrement())
+//   Races       Races?        @relation(fields: [races_Id], references: [id])
+//   event       Events        @relation(fields: [event_id], references: [id])
+//   event_id    Int
+//   races_Id    Int
+//   max_point   Int
+//   distance    Int
+//   Race_result Race_result[]
+// }
+
+model Race_result {
+  id           Int       @id @default(autoincrement())
+  race         Races     @relation(fields: [Races_id], references: [id])
+  Races_id     Int
+  //UserRunx     UserRunX @relation(fields: [runx_id], references: [id])
+  runx_id      Int?
+  // Category     Category? @relation(fields: [categoryId], references: [id])
+  // categoryId   Int
+  rank         Int
+  time         String
+  firstname    String
+  lastname     String
+  gender       String
+  age_group    String
+  nationality  String
+  claim_status Boolean   @default(false)
+  time_stamp   DateTime?
+  runner_img   String?
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
