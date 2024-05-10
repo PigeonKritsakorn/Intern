@@ -183,7 +183,7 @@ export function RankingCard() {
   }, []);
 
   return (
-    <div className="flex flex-col w-[100%] h-auto items-center space-y-4">
+    <div className="flex flex-col w-[100%] h-[100%] items-center space-y-4">
       <div className="xs:w-[90%] md:w-[90%] lg:w-[80%] xl:w-[80%] flex flex-row bg-[#F5F5F5] rounded-lg h-auto">
         <div className="flex flex-wrap content-center pl-2">
           <Search className="opacity-[0.6]" />
@@ -196,7 +196,7 @@ export function RankingCard() {
           className="border-0 placeholder:text-sm bg-[#F5F5F5]"
         />
       </div>
-      <div className="flex flex-col justify-center items-center xs:w-[90%] md:w-[90%] lg:w-[80%] xl:w-[80%] h-[100%] space-y-10">
+      <div className="flex flex-col justify-center items-center xs:w-[90%] md:w-[90%] lg:w-[80%] xl:w-[80%] h-auto space-y-10">
         {runnerData && runnerData.length > 0 && (
           <div className="flex flex-row justify-center w-[100%] xs:h-[180px] lg:h-[150px] xl:h-[200px] space-x-10">
             {runnerData.slice(0, 3).map((runner, index) => (
