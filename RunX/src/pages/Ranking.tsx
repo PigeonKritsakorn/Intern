@@ -288,8 +288,9 @@ function Ranking() {
           </span>
         </div>
       </div>
-      <div className="flex flex-col xl:w-[100%] h-[60%]">
-        <div className="bgRanking w-screen h-auto flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
+      <div className="relative flex flex-col xl:w-[100%] h-[60%]">
+        <img src={RankingBG} className="w-screen h-screen" />
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center space-y-4 pt-10 pb-10">
           {/* <RankingGraph /> */}
           <RankingCard />
         </div>
