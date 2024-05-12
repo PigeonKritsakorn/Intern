@@ -3,6 +3,7 @@ import Navbar from "./components/NavBar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Ranking from "./pages/Ranking";
+import Home from "./pages/Home";
 // import Ranking from "./pages/Ranking";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/" element={<Ranking />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
+            <Route path="/races" element={<Home />} />
           </Routes>
         </>
       ) : (
@@ -40,6 +42,7 @@ const App = () => {
             <Route path="/" element={<Ranking />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
+            <Route path="/races" element={<Home />} />
           </Routes>
         </>
       )}
