@@ -25,7 +25,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
   email: z.string().min(8).max(60),
-  password: z.string().min(5).max(50),
+  password: z.string().min(2).max(50),
 });
 
 // Function to set Authorization header
