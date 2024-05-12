@@ -3,10 +3,7 @@ import { PrismaClient } from "@prisma/client";
 // import { getraces } from "./api/races/races";
 import { cors } from "@elysiajs/cors";
 import { swagger } from "@elysiajs/swagger";
-// import {
-//   appgetEventPlugin,
-//   appgetfillterEventPlugin,
-// } from "./api/org_Events/Events";
+import { appgetEventPlugin, appgetfillterEventPlugin } from "./Events";
 // import { appUser } from "./server/serverUser";
 // import { appAdmin } from "./server/serverAdmin";
 // import { resetpassword } from "./api/user/users";
@@ -40,8 +37,8 @@ const app = new Elysia()
   .use(appUsers)
   .use(appRunnerPlugin)
   // .use(getraces)
-  // .use(appgetEventPlugin)
-  // .use(appgetfillterEventPlugin)
+  .use(appgetEventPlugin)
+  .use(appgetfillterEventPlugin)
 
   .listen(3000);
 console.log(
