@@ -12,7 +12,7 @@ import { swagger } from "@elysiajs/swagger";
 // import { resetpassword } from "./api/user/users";
 import { appUsers } from "./users";
 import { appRunnerPlugin } from "./runners";
-// import { appSingupPlugin } from "./api/user/singup";
+import { appSingupPlugin } from "../src/signup";
 import { appLoginPlugin } from "./login";
 
 const app = new Elysia()
@@ -35,7 +35,7 @@ const app = new Elysia()
 
   // .use(appAdmin)
   // .use(resetpassword)
-  // .use(appSingupPlugin)
+  .use(appSingupPlugin)
 
   .use(appUsers)
   .use(appRunnerPlugin)
