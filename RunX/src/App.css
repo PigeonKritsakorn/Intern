@@ -38,3 +38,8 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Toaster style */
+.bg-success {
+  background-color: #3ded97; 
+}
