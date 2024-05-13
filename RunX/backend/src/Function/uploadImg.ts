@@ -7,7 +7,7 @@ const db = new PrismaClient();
 
 export const uploadURI = async (params: any) => {
   try {
-    const storage = new Storage({ keyFilename: "src/googleclound.json" });
+    const storage = new Storage({ keyFilename: "src/key_googlecloud.json" });
     const { filename, bucket, extFile } = params;
     const options: any = {
       version: "v4",
