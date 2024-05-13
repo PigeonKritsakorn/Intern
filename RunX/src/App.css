@@ -43,3 +43,7 @@
 .bg-success {
   background-color: #3ded97; 
 }
+
+.eventYear {
+  background-image: url("./assets/RacesBG.png");
+}
