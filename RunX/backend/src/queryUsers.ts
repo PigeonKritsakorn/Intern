@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { checkemail } from "../src/querysignup";
-import { calculateScore } from "../src/calculate";
+import { calculateScore } from "./Function/calculate";
 import postmark from "postmark";
 import { time } from "console";
 const db = new PrismaClient();

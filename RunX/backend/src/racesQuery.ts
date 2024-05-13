@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import console from "console";
-import { calculateScore } from "../src/calculate";
+import { calculateScore } from "./Function/calculate";
 import * as interface_ from "../src/interface";
 import { paceAvg } from "../src/queryRunner";
 const db = new PrismaClient();

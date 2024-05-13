@@ -4,7 +4,7 @@ import { getraces } from "./races";
 import { cors } from "@elysiajs/cors";
 import { swagger } from "@elysiajs/swagger";
 import { appgetEventPlugin, appgetfillterEventPlugin } from "./Events";
-// import { appUser } from "./server/serverUser";
+import { appUser } from "../src/serverUser";
 // import { appAdmin } from "./server/serverAdmin";
 // import { resetpassword } from "./api/user/users";
 import { appUsers } from "./users";
@@ -28,7 +28,7 @@ const app = new Elysia()
   .get("/", () => "server Runx is running ")
   .use(swagger())
   .use(appLoginPlugin)
-  // .use(appUser)
+  .use(appUser)
 
   // .use(appAdmin)
   // .use(resetpassword)

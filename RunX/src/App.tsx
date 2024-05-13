@@ -6,6 +6,7 @@ import Ranking from "./pages/Ranking";
 import Home from "./pages/Home";
 import EventsYear from "./pages/EventsYear";
 import RNTable from "./pages/RNTable";
+import RunnerProfile from "./pages/RunnerProfile";
 // import Ranking from "./pages/Ranking";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -39,6 +40,7 @@ const App = () => {
               path="/EventsYear/:name/:name/RNTable"
               element={<RNTable />}
             />
+            <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
           </Routes>
         </>
       ) : (
@@ -55,6 +57,7 @@ const App = () => {
               path="/EventsYear/:name/:name/RNTable"
               element={<RNTable />}
             />
+            <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
           </Routes>
         </>
       )}
