@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Ranking from "./pages/Ranking";
 import Home from "./pages/Home";
+import EventsYear from "./pages/EventsYear";
+import RNTable from "./pages/RNTable";
 // import Ranking from "./pages/Ranking";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -32,6 +34,11 @@ const App = () => {
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/races" element={<Home />} />
+            <Route path="/EventsYear/:name" element={<EventsYear />} />
+            <Route
+              path="/EventsYear/:name/:name/RNTable"
+              element={<RNTable />}
+            />
           </Routes>
         </>
       ) : (
@@ -43,6 +50,11 @@ const App = () => {
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/races" element={<Home />} />
+            <Route path="/EventsYear/:name" element={<EventsYear />} />
+            <Route
+              path="/EventsYear/:name/:name/RNTable"
+              element={<RNTable />}
+            />
           </Routes>
         </>
       )}
