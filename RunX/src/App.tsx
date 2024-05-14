@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import EventsYear from "./pages/EventsYear";
 import RNTable from "./pages/RNTable";
 import RunnerProfile from "./pages/RunnerProfile";
+import Admin from "./pages/Admin";
+import AdminLogin from "./pages/AdminLogin";
 import { Toaster } from "@/components/ui/toaster";
 import { useEffect, useState } from "react";
 
@@ -35,6 +37,8 @@ const App = () => {
         <Route path="/EventsYear/:name" element={<EventsYear />} />
         <Route path="/EventsYear/:name/:name/RNTable" element={<RNTable />} />
         <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
+        <Route path="/Admin" element={<Admin />} />
+        <Route path="/AdminLogin" element={<AdminLogin />} />
       </Routes>
     </>
   );
