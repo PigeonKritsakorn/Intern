@@ -3,7 +3,7 @@ import {
   nationinfor,
   runnerDistances,
   raceResult,
-} from "../src/queryRunner";
+} from "../../Query/Runners/queryRunner";
 
 export const appRunnerPlugin = new Elysia()
 

@@ -4,8 +4,8 @@ import {
   getUserByemail,
   updateUser,
   claimPoint,
-} from "../src/queryCurrentuser";
-import * as interface_ from "../src/interface";
+} from "../../Query/Users/queryCurrentuser";
+import * as interface_ from "../../interface";
 
 export const currentusersPlugin = new Elysia()
   .get("/currentusers", async ({ profile }) => {

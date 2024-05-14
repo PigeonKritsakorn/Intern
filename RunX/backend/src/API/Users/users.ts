@@ -4,8 +4,8 @@ import {
   getrankrunx,
   getUserByID,
   totalPoint,
-} from "../src/queryusers";
-import { checkemail } from "../src/querysignup";
+} from "../../Query/Users/queryUsers";
+import { checkemail } from "../../Query/Users/querySignup";
 import postmark from "postmark";
 
 export const appUsersPlugin = new Elysia().post(

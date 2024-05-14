@@ -210,7 +210,7 @@ function Login() {
                 )}
               />
               <Button
-                className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%] text-xl"
+                className="mb-[10px] xs:w-[350px] h-[50px] xl:w-[100%] text-lg"
                 style={{ backgroundColor: COLORS.BUTTON }}
                 type="submit"
               >

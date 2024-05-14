@@ -1,5 +1,5 @@
 import { Elysia, t } from "elysia";
-import { checkemail, duplecateUser, createUser } from "../src/querysignup";
+import { checkemail, duplecateUser, createUser } from "../../Query/Users/querySignup";
 
 export const appSingupPlugin = new Elysia().post(
   "/users/signup",

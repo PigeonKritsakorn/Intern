@@ -1,7 +1,7 @@
 import { Elysia, t } from "elysia";
-import { appUsersPlugin } from "../src/users";
-import { currentusersPlugin } from "../src/currentuser";
-import { appuploadImg } from "../src/uploadImg";
+import { appUsersPlugin } from "../API/Users/users";
+import { currentusersPlugin } from "../API/Users/currentuser";
+import { appuploadImg } from "../API/Users/uploadImg";
 
 export const appUser = new Elysia().guard(
   {

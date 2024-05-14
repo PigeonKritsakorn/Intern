@@ -1,5 +1,5 @@
 import { Elysia, t } from "elysia";
-import { checkUser, checkAdmin } from "./queryLogin";
+import { checkUser, checkAdmin } from "../../Query/Users/queryLogin";
 import { jwt } from "@elysiajs/jwt";
 
 export const appLoginPlugin = new Elysia()

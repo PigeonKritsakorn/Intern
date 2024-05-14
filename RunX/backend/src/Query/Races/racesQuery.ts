@@ -1,8 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import console from "console";
-import { calculateScore } from "./Function/calculate";
-import * as interface_ from "../src/interface";
-import { paceAvg } from "../src/queryRunner";
+import { calculateScore } from "../../Function/calculate";
+import * as interface_ from "../../interface";
+import { paceAvg } from "../Runners/queryRunner";
 const db = new PrismaClient();
 
 export const createRace = async (race: any, query: any) => {

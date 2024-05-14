@@ -41,7 +41,7 @@ import { COLORS } from "../components/colors";
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(getUserLogin());
 
-  const auth = isLoggedIn;
+  const auth = localStorage.getItem("Login");
   const authAdmin = localStorage.getItem("AdminToken");
   const navigate = useNavigate();
   const logout = () => {
@@ -392,7 +392,7 @@ function Navbar() {
                               <Button
                                 className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
                                 onClick={Tosignup}
-                                variant={"signup"}
+                                style={{ backgroundColor: COLORS.BLACK }}
                               >
                                 Sign up
                               </Button>
@@ -448,7 +448,11 @@ function Navbar() {
                   <Stack direction={"row"} spacing={2}>
                     <div>
                       <Link to="/Signup">
-                        <Button className="" size={"sm"} variant={"signup"}>
+                        <Button
+                          className=""
+                          size={"sm"}
+                          style={{ backgroundColor: COLORS.BLACK }}
+                        >
                           Sign up
                         </Button>
                       </Link>
