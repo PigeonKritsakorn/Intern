@@ -1,15 +1,15 @@
 import { Elysia, t } from "elysia";
 import { PrismaClient } from "@prisma/client";
-import { raceResult } from "../src/queryRunner";
+import { raceResult } from "../../Query/Runners/queryRunner";
 import {
   createRace,
   queryallRaces,
   queryRunner,
   topRunner,
   editRace,
-} from "../src/racesQuery";
-import { eventYear } from "../src/event_query";
-import { queryRaces } from "../src/racesQuery";
+} from "../../Query/Races/racesQuery";
+import { eventYear } from "../../Query/org_Events/event_query";
+import { queryRaces } from "../../Query/Races/racesQuery";
 
 const db = new PrismaClient();
 export const appRacesPlugin = new Elysia()

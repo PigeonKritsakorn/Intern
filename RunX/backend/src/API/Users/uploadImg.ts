@@ -1,5 +1,5 @@
 import { Elysia, t } from "elysia";
-import { uploadURI } from "../src/Function/uploadImg";
+import { uploadURI } from "../../Function/uploadImg";
 
 export const appuploadImg = new Elysia().get(
   "/creating/signUrl",

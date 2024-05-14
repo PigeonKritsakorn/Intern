@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import * as interface_ from "../src/interface";
+import * as interface_ from "../../interface";
 const db = new PrismaClient();
 
 export const createEvent = async (events: any) => {

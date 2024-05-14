@@ -1,16 +1,19 @@
 import { Elysia, t } from "elysia";
 import { PrismaClient } from "@prisma/client";
-import { getraces } from "./races";
+import { getraces } from "./API/Races/races";
 import { cors } from "@elysiajs/cors";
 import { swagger } from "@elysiajs/swagger";
-import { appgetEventPlugin, appgetfillterEventPlugin } from "./Events";
-import { appUser } from "../src/serverUser";
-// import { appAdmin } from "./server/serverAdmin";
-// import { resetpassword } from "./api/user/users";
-import { appUsers } from "./users";
-import { appRunnerPlugin } from "./runners";
-import { appSingupPlugin } from "../src/signup";
-import { appLoginPlugin } from "./login";
+import {
+  appgetEventPlugin,
+  appgetfillterEventPlugin,
+} from "./API/org_Events/Events";
+import { appUser } from "./Server/serverUser";
+import { appAdmin } from "./Server/serverAdmin";
+import { resetpassword } from "./API/Users/users";
+import { appUsers } from "./API/Users/users";
+import { appRunnerPlugin } from "./API/Runners/runners";
+import { appSingupPlugin } from "./API/Users/signup";
+import { appLoginPlugin } from "./API/Users/login";
 
 const app = new Elysia()
 
@@ -29,9 +32,8 @@ const app = new Elysia()
   .use(swagger())
   .use(appLoginPlugin)
   .use(appUser)
-
-  // .use(appAdmin)
-  // .use(resetpassword)
+  .use(appAdmin)
+  .use(resetpassword)
   .use(appSingupPlugin)
 
   .use(appUsers)

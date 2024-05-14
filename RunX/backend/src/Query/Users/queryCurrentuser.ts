@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { calculateScore } from "./Function/calculate";
+import { calculateScore } from "../../Function/calculate";
 const db = new PrismaClient();
 
 export const totalPoint = async (runxId: number) => {

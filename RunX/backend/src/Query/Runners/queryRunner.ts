@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
-import continents from "../JSON/countryByContinent.json";
-import { calculateScore } from "./Function/calculate";
+import continents from "../../../JSON/countryByContinent.json";
+import { calculateScore } from "../../Function/calculate";
 const db = new PrismaClient();
 
 export const nationinfor = async (continent: string) => {

@@ -6,7 +6,7 @@ import {
   eventFilter,
   eventYear,
   editEvent,
-} from "../src/event_query";
+} from "../../Query/org_Events/event_query";
 
 const db = new PrismaClient();
 

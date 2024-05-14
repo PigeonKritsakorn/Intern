@@ -7,9 +7,8 @@ import Home from "./pages/Home";
 import EventsYear from "./pages/EventsYear";
 import RNTable from "./pages/RNTable";
 import RunnerProfile from "./pages/RunnerProfile";
-// import Ranking from "./pages/Ranking";
-
 import { Toaster } from "@/components/ui/toaster";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const authToken = localStorage.getItem("Login");
@@ -26,41 +25,17 @@ const App = () => {
 
   return (
     <>
-      {authToken ? (
-        <>
-          {!isLoginOrSignupPage() && <Navbar />}
-          <Toaster />
-          <Routes>
-            <Route path="/" element={<Ranking />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Signup" element={<Signup />} />
-            <Route path="/races" element={<Home />} />
-            <Route path="/EventsYear/:name" element={<EventsYear />} />
-            <Route
-              path="/EventsYear/:name/:name/RNTable"
-              element={<RNTable />}
-            />
-            <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
-          </Routes>
-        </>
-      ) : (
-        <>
-          {!isLoginOrSignupPage() && <Navbar />}
-          <Toaster />
-          <Routes>
-            <Route path="/" element={<Ranking />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Signup" element={<Signup />} />
-            <Route path="/races" element={<Home />} />
-            <Route path="/EventsYear/:name" element={<EventsYear />} />
-            <Route
-              path="/EventsYear/:name/:name/RNTable"
-              element={<RNTable />}
-            />
-            <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
-          </Routes>
-        </>
-      )}
+      <Toaster />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Ranking />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/races" element={<Home />} />
+        <Route path="/EventsYear/:name" element={<EventsYear />} />
+        <Route path="/EventsYear/:name/:name/RNTable" element={<RNTable />} />
+        <Route path="/RunnerProfile/:id" element={<RunnerProfile />} />
+      </Routes>
     </>
   );
 };
